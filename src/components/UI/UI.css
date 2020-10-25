@@ -1,0 +1,162 @@
+.nav {
+  background-color: #333;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+
+  /* border-radius: 5px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  padding: 5%; */
+
+  z-index: 1;
+}
+
+.navL {
+  background-color: #43c6ac;
+  display: flex;
+  justify-content: space-between;
+  position: static;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+
+  border-radius: 5px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  padding: 1%;
+
+  z-index: 1;
+}
+
+.b1 {
+  position: static;
+  right: 10px;
+  margin-left: 56rem;
+
+  border-radius: 30px;
+  height: 40px;
+
+  transition-timing-function: ease-in-out;
+  transition: all 0.9s;
+  /* width: 70px; */
+}
+.b1:hover {
+  background-color: #f8ffae;
+
+  transition-timing-function: ease-in-out;
+  transition: all 0.9s;
+}
+
+.b2 {
+  position: static;
+  right: 120px;
+  border-radius: 30px;
+  height: 40px;
+
+  transition-timing-function: ease-in-out;
+  transition: all 0.9s;
+  /* width: 30px; */
+}
+
+.b2:hover {
+  cursor: pointer;
+  background-color: #f8ffae;
+  /* border-radius: 30px; */
+
+  transition-timing-function: ease-in-out;
+  transition: all 0.9s;
+}
+
+/* LOADING COMPONENT */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* // background-color:#eb8c34; */
+  background: #43c6ac; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #f8ffae,
+    #43c6ac
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #f8ffae,
+    #43c6ac
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #fff;
+  animation: loader 2s infinite ease;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
