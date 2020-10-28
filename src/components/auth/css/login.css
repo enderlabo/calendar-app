@@ -7,66 +7,70 @@ form p {
   font-weight: bold;
 }
 
+body {
+  background-color: red;
+}
+
 input {
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); */
+  border-radius: 5px;
+  box-shadow: 0 1px 10px 0 rgba(255, 255, 255, 0.918),
+    0 1px 10px 0 rgba(255, 255, 255, 0.05);
+  color: black;
+  font-weight: bold;
 }
 
 .login-container {
   margin-top: 15%;
-  background: #43c6ac; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #f8ffae,
-    #43c6ac
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: rgb(92, 87, 87);
   background: linear-gradient(
-    to top,
-    #f8ffae,
-    #43c6ac
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    180deg,
+    rgba(92, 87, 87, 1) 25%,
+    rgba(1, 1, 1, 1) 91%
+  );
 }
 .login-form-1 {
-  background: #43c6ac; /* fallback for old browsers */
+  background: #1488cc; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
-    #f8ffae,
-    #43c6ac
+    #2b32b2,
+    #1488cc
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #f8ffae,
-    #43c6ac
+    #2b32b2,
+    #1488cc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  border-radius: 5px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 5px 8px 0 rgba(255, 255, 255, 0.918),
+    0 9px 26px 0 rgba(255, 255, 255, 0.911);
   padding: 5%;
 }
 .login-form-1 h3 {
   text-align: center;
-  color: #434343;
+  color: #fff;
 }
 .login-form-2 {
-  background: #43c6ac; /* fallback for old browsers */
+  background: #1488cc; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to bottom,
-    #f8ffae,
-    #43c6ac
+    to top,
+    #2b32b2,
+    #1488cc
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to bottom,
-    #f8ffae,
-    #43c6ac
+    to top,
+    #2b32b2,
+    #1488cc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   border-radius: 5px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 5px 0 0 rgba(255, 255, 255, 0.918),
+    0 5px 10px 0 rgba(255, 255, 255, 0.911);
   padding: 5%;
 }
 .login-form-2 h3 {
   text-align: center;
-  color: #434343;
+  color: #fff;
 }
 .login-container form {
   padding: 10%;

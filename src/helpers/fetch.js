@@ -1,7 +1,7 @@
 const baseUrl = process.env.REACT_APP_API_URL;
 
 const fetchWithOutToken = (endpoint, data, method = "GET") => {
-  const url = `${baseUrl}/${endpoint}`; //
+  const url = `${baseUrl}/${endpoint}/`; //
   //Used an api without token
   if (method === "GET") {
     return fetch(url);
@@ -19,7 +19,6 @@ const fetchWithOutToken = (endpoint, data, method = "GET") => {
 const fetchWithToken = (endpoint, data, method = "GET") => {
   const url = `${baseUrl}/${endpoint}`; //
   const token = localStorage.getItem("token") || "";
-  console.log(token);
   //Used an api with token
   if (method === "GET") {
     return fetch(url, {

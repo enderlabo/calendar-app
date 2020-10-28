@@ -16,8 +16,8 @@ export const Login = () => {
   const [formRegisterValues, handleRegisterChange] = useCustomForm({
     rName: "test",
     rEmail: "test@gmail.com",
-    rPassword: "",
-    rRepeatPassword: "",
+    rPassword: "123456",
+    rRepeatPassword: "123456",
   });
 
   const { register, handleSubmit, getValues, errors } = useForm();
@@ -35,11 +35,11 @@ export const Login = () => {
     dispatch(startRegister(rEmail, rPassword, rName));
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // e.preventDefault();
-    dispatch(startLogin(lEmail, lPassword));
-  };
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  //   // e.preventDefault();
+  //   dispatch(startLogin(lEmail, lPassword));
+  // };
   return (
     <>
       <Navbar />

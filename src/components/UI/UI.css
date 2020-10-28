@@ -1,5 +1,5 @@
 .nav {
-  background-color: #333;
+  background-color: rgb(66, 64, 64);
   display: flex;
   color: white;
   justify-content: space-between;
@@ -17,7 +17,8 @@
 }
 
 .navL {
-  background-color: #43c6ac;
+  background-color: rgb(66, 64, 64);
+  color: white;
   display: flex;
   justify-content: space-between;
   position: static;
@@ -34,6 +35,7 @@
 }
 
 .b1 {
+  color: white;
   position: static;
   right: 10px;
   margin-left: 56rem;
@@ -46,17 +48,19 @@
   /* width: 70px; */
 }
 .b1:hover {
-  background-color: #f8ffae;
+  background-color: #2b32b2;
+  color: white;
 
   transition-timing-function: ease-in-out;
   transition: all 0.9s;
 }
 
 .b2 {
+  border-radius: 30px;
+  color: white;
+  height: 40px;
   position: static;
   right: 120px;
-  border-radius: 30px;
-  height: 40px;
 
   transition-timing-function: ease-in-out;
   transition: all 0.9s;
@@ -65,7 +69,8 @@
 
 .b2:hover {
   cursor: pointer;
-  background-color: #f8ffae;
+  background-color: #2b32b2;
+  color: white;
   /* border-radius: 30px; */
 
   transition-timing-function: ease-in-out;
@@ -94,17 +99,18 @@ body {
   top: 0;
   left: 0;
   /* // background-color:#eb8c34; */
-  background: #43c6ac; /* fallback for old browsers */
+  background: #1488cc; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
-    #f8ffae,
-    #43c6ac
+    #2b32b2,
+    #1488cc
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #f8ffae,
-    #43c6ac
+    #2b32b2,
+    #1488cc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
 
   display: flex;

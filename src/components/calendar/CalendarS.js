@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { Navbar } from "../UI/Navbar";
@@ -10,7 +10,11 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./css/styles.css";
 import { uiOpenEmptyModal, uiOpenModal } from "../../Redux/actions/uiOpenModal";
 import { useDispatch, useSelector } from "react-redux";
-import { eventClean, eventSetActive } from "../../Redux/actions/event";
+import {
+  eventClean,
+  eventSetActive,
+  startLoadingEvent,
+} from "../../Redux/actions/event";
 import { Button } from "../UI/Button";
 import { DeletedButton } from "../UI/DeletedButton";
 import { CalendarClickedModal } from "./CalendarClickedModal";
@@ -18,12 +22,12 @@ import { CalendarClickedModal } from "./CalendarClickedModal";
 const localizer = momentLocalizer(moment);
 
 export const CalendarS = () => {
-  // useEffect(() => {
-
-  // }, [ activeEvent, setFormValues, ])
-
   const dispatch = useDispatch();
   const { events, activeEvent } = useSelector((state) => state.calendar);
+
+  useEffect(() => {
+    dispatch(startLoadingEvent());
+  }, [dispatch]);
 
   const [lastView, setLastView] = useState(
     localStorage.getItem("lastView") || "month"
@@ -44,7 +48,6 @@ export const CalendarS = () => {
   };
 
   const onSelectSlot = (e) => {
-    console.log(e);
     if (e.action === "doubleClick") {
       dispatch(uiOpenEmptyModal());
       // dispatch( uiOpenModal() );
