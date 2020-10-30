@@ -7,6 +7,7 @@ import { customStyles } from "../../helpers/calendar-modal";
 import {
   eventClean,
   eventStartAddNew,
+  eventStartUpdate,
   eventUpdated,
 } from "../../Redux/actions/event";
 import { uiCloseModal } from "../../Redux/actions/uiCloseModal";
@@ -79,7 +80,7 @@ export const CalendarClickedModal = () => {
 
     //TODO: realizar grabación
     if (activeEvent) {
-      dispatch(eventUpdated(formValues));
+      dispatch(eventStartUpdate(formValues));
     } else {
       dispatch(
         eventStartAddNew({

@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { fetchWithToken } from "../../helpers/fetch";
 import { fixEvents } from "../../helpers/fixDateEvent";
 import { types } from "../types/types";
@@ -41,10 +42,45 @@ export const eventClean = () => ({
   type: types.eventClean,
 });
 
+export const eventStartUpdate = (event) => {
+  return async (dispatch) => {
+    try {
+      const res = await fetchWithToken(` event/${event.id}`, event, "PUT");
+      const body = await res.json();
+
+      if (body.ok) {
+        dispatch(eventStartUpdate(event));
+      } else {
+        Swal.fire("Error", body.msg, "error");
+      }
+      // console.log(event);
+    } catch (error) {}
+  };
+};
+
 export const eventUpdated = (event) => ({
   type: types.eventUpdated,
   payload: event,
 });
+
+export const eventStartDelete = () => {
+  return async (dispatch, getState) => {
+    const { id } = getState().calendar.activeEvent;
+
+    try {
+      const resp = await fetchWithToken(`event/${id}`, {}, "DELETE");
+      const body = await resp.json();
+
+      if (body.ok) {
+        dispatch(eventDeleted());
+      } else {
+        Swal.fire("Error", body.msg, "error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const eventDeleted = () => ({
   type: types.eventDeleted,
@@ -57,6 +93,7 @@ export const startLoadingEvent = () => {
       const body = await resp.json();
       //get events from backend
       const events = fixEvents(body.events);
+      console.log(events);
 
       dispatch(eventLoaded(events));
     } catch (error) {
@@ -65,7 +102,19 @@ export const startLoadingEvent = () => {
   };
 };
 
-const eventLoaded = (event) => ({
+const eventLoaded = (events) => ({
   type: types.eventLoaded,
-  payload: event,
+  payload: events,
 });
+
+//destroyed localstorage with reducer
+export const eventStartLogout = () => {
+  return (dispatch) => {
+    localStorage.clear();
+
+    dispatch(eventStartLogout());
+    dispatch(eventLogout());
+  };
+};
+
+const eventLogout = () => ({ type: types.eventLogOut, events: [] });
